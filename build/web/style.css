@@ -1,0 +1,201 @@
+
+.header {
+    
+    background-color: #ccccff;
+    padding-bottom: 30px;
+    padding-left: 400px;
+    text-transform: uppercase;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+}
+#registracija {
+
+    padding-right: 30px;
+
+}
+#kontakt {
+    padding-right:30px;
+}
+
+#galerija {
+    padding-right: 30px;
+
+}
+
+#zaposleni{
+    padding-right: 30px;
+
+}
+
+.pocetna {
+
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.pocetna_hero {
+    background-size: cover;
+    height: 50vh;
+    background-image: url('slike/hakerslika.jpg');
+    margin-top: 15px;
+    margin-bottom: 25px;
+
+}
+.pocetna_hero h1 {
+    font-family: 'Lobster', cursive;
+    color: red;
+    font-size: 50px;
+}
+
+.tekst_hero {
+    transform: rotate(-20deg);
+    padding-left: 60px;
+    width: 500px;
+    padding-top: 15vh;
+}
+
+.pocetna_hero h1 span {
+    border: 2px solid white;
+    border-radius: 15px;
+    background-color: black;
+    color:white;
+    margin-left: 0px;
+    padding: 0 15px;
+}
+
+.pocetna_proizvod {
+    width: 380px;
+    float:left;
+    margin-left: 65px;
+
+
+}
+
+.pocetna_proizvod img {
+
+    display:block;
+    margin: 0 auto;
+    width: 200px;
+    height: 180px;
+}
+
+.proizvod_slika {
+    width:inherit;
+    height:200px;
+}
+
+.pocetna_proizvod_info {
+    border-radius: 15%;
+    margin-bottom: 10px;
+    width: 350px;
+    text-align: center;
+    padding: 10px;
+    font-size: 18px;
+    background-color: #7FFFD4;
+}
+
+.pocetna_proizvod_cena  {
+
+    float:left;
+}
+
+.dugme-detalji {
+
+    font-family: 'Lobster', cursive;
+    text-decoration:none;	
+    padding: 5px;
+    color: yellow;
+    background-color: black;
+    margin-right: 25px;
+    display: inline;
+    width:auto;
+    float: right;
+    margin-bottom: 15px;
+}
+
+
+.registracija_header {
+    background: linear-gradient(to bottom, #ccccff 0%, #ffffff 100%);    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 450px;
+    margin-bottom: 30px;    
+
+    font-family: 'Lobster', cursive;
+
+}
+
+.registracija_form {
+    padding-left: 450px;
+    font-family: 'Lobster', cursive;
+    width: 100%;
+}
+
+#registracija_username {
+    margin-bottom: 20px;
+}
+#registracija_password {
+    margin-bottom: 20px;
+}
+#registracija_ime {
+    margin-bottom: 20px;
+}
+#registracija_prezime {
+    margin-bottom: 20px;
+}
+#registracija_mesto {
+    margin-bottom: 20px;
+}
+#registracija_godine {
+    margin-bottom: 20px;
+}
+#registracija_submit {
+
+
+}
+
+.zaposleni_zaposleni {
+
+    background: linear-gradient(to bottom, #ccccff 0%, #ffffff 100%);    padding-top: 15px;
+    padding-bottom: 15px;
+
+    margin-bottom: 30px;   
+
+}
+
+.zaposleni_zaposlen{
+    text-align: center;
+
+    width: 380px;
+    float:left;
+    margin-left: 65px;
+
+}
+.zaposleni_zaposlen h2 {
+    padding-top: 15px;
+    padding-bottom: 30px;
+}
+
+#zaposleni_zaposlen_info {
+    font-family: Trebuchet MS;
+}
+
+.zaposleni_zaposlen img {
+    border-radius: 50%;
+    display:block;
+    margin: 0 auto;
+    width: 200px;
+    height: 180px;
+}
+
+.zaposleni_slika {
+    width:inherit;
+    height:200px;
+}
+
+
+.galerija_proizvodi {
+    background: linear-gradient(to bottom, #ccccff 0%, #ffffff 100%);    padding-top: 15px;
+    padding-bottom: 15px;
+
+    margin-bottom: 30px;   
+
+}
