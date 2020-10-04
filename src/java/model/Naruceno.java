@@ -2,18 +2,18 @@ package model;
 
 public class Naruceno {
 private int id;
-private int korisnik_id;
-private int telefon_id;
+private Korisnik korisnik;
+private Telefon telefon;
 
-    public Naruceno(int id, int korisnik_id, int mobilni_id) {
+    public Naruceno(int id, Korisnik korisnik, Telefon telefon) {
         this.id = id;
-        this.korisnik_id = korisnik_id;
-        this.telefon_id = telefon_id;
+        this.korisnik = korisnik;
+        this.telefon = telefon;
     }
 
-    public Naruceno(int korisnik_id, int telefon_id) {
-        this.korisnik_id = korisnik_id;
-        this.telefon_id = telefon_id;
+    public Naruceno(Korisnik korisnik, Telefon telefon) {
+        this.korisnik = korisnik;
+        this.telefon = telefon;
     }
     
 
@@ -28,26 +28,27 @@ private int telefon_id;
         this.id = id;
     }
 
-    public int getKorisnik_id() {
-        return korisnik_id;
+    public Korisnik getKorisnik() {
+        return korisnik;
     }
 
-    public void setKorisnik_id(int korisnik_id) {
-        this.korisnik_id = korisnik_id;
+    public void setKorisnik(Korisnik korisnik) {
+        this.korisnik = korisnik;
     }
 
-    public int getTelefon_id() {
-        return telefon_id;
+    public Telefon getTelefon() {
+        return telefon;
     }
 
-    public void setTelefon_id(int telefon_id) {
-        this.telefon_id = telefon_id;
+    public void setTelefon(Telefon telefon) {
+        this.telefon = telefon;
     }
 
     @Override
     public String toString() {
-        return "Naruceno{" + "id=" + id + ", korisnik_id=" + korisnik_id + ", telefon_id=" + telefon_id + '}';
+        return "Naruceno{" + "id=" + id + ", korisnik=" + korisnik + ", telefon=" + telefon + '}';
     }
+
     
     
 }

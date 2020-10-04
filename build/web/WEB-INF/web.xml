@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
     <servlet>
-        <servlet-name>RegistracijaServlet</servlet-name>
-        <servlet-class>servleti.RegistracijaServlet</servlet-class>
+        <servlet-name>KorisnikServlet</servlet-name>
+        <servlet-class>servleti.KorisnikServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>UnosTelefonaServlet</servlet-name>
-        <servlet-class>servleti.UnosTelefonaServlet</servlet-class>
+        <servlet-name>TelefonServlet</servlet-name>
+        <servlet-class>servleti.TelefonServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>UnosNarucenoServlet</servlet-name>
-        <servlet-class>servleti.UnosNarucenoServlet</servlet-class>
+        <servlet-name>NarudzbinaServlet</servlet-name>
+        <servlet-class>servleti.NarudzbinaServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>RegistracijaServlet</servlet-name>
-        <url-pattern>/RegistracijaServlet</url-pattern>
+        <servlet-name>KorisnikServlet</servlet-name>
+        <url-pattern>/KorisnikServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>UnosTelefonaServlet</servlet-name>
-        <url-pattern>/UnosTelefonaServlet</url-pattern>
+        <servlet-name>TelefonServlet</servlet-name>
+        <url-pattern>/TelefonServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>UnosNarucenoServlet</servlet-name>
-        <url-pattern>/UnosNarucenoServlet</url-pattern>
+        <servlet-name>NarudzbinaServlet</servlet-name>
+        <url-pattern>/NarudzbinaServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

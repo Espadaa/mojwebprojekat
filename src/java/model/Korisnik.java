@@ -1,7 +1,8 @@
 package model;
 
-import database.DBConnection;
+import database.DBQueries;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class Korisnik {
  private  int id;    
@@ -24,6 +25,16 @@ public class Korisnik {
         
     }
 
+    
+    public Korisnik(String username, String password, String ime, String prezime, String mesto, int godine) {
+        this.username = username;
+        this.password = password;
+        this.ime = ime;
+        this.prezime = prezime;
+        this.mesto = mesto;
+        this.godine = godine;
+        
+    }
     
     
     public Korisnik() {
@@ -89,7 +100,11 @@ public class Korisnik {
 
     @Override
     public String toString() {
-        return "Korisnik{" + "id=" + id + ", username=" + username + ", password=" + password + ", ime=" + ime + ", prezime=" + prezime + ", mesto=" + mesto + ", godine=" + godine + ", pol=" + '}';
+        return "Korisnik{" + "id=" + id + ", username=" + username + ", password=" + password + ", ime=" + ime + ", prezime=" + prezime + ", mesto=" + mesto + ", godine=" + godine + '}';
+    }
+    
+    public static ArrayList<Korisnik> sviKorisnici() throws SQLException {
+        return DBQueries.getAllKorisnik();
     }
     
 }

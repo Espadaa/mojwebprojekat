@@ -12,7 +12,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.Telefon;
-public class UnosTelefonaServlet extends HttpServlet {
+
+@WebServlet(name = "TelefonServlet", urlPatterns = {"/TelefonServlet"})
+
+public class TelefonServlet extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -25,8 +28,9 @@ public class UnosTelefonaServlet extends HttpServlet {
              String opis = request.getParameter("opis");
              int cena = Integer.parseInt(request.getParameter("cena"));
              int godina = Integer.parseInt(request.getParameter("godina"));
+             String slika = request.getParameter("slika");
             
-            Telefon telefon = new Telefon(id, naziv, proizvodjac, opis, cena, godina);
+            Telefon telefon = new Telefon(id, naziv, proizvodjac, opis, cena, godina, slika);
             DBQueries.insertTelefon(telefon);
             
         }
@@ -44,7 +48,7 @@ public class UnosTelefonaServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+//        processRequest(request, response);
     }
 
     @Override

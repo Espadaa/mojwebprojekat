@@ -1,4 +1,8 @@
 
+<%@page import="database.DBQueries"%>
+<%@page import="model.Telefon"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="model.Korisnik"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -18,43 +22,26 @@
                 <a href ="zaposleni.jsp" id="zaposleni">Zaposleni</a><b/>
             </div>
         </div>
-        <div class ="pocetna">
+        <div class = "pocetna">
             <div class ="pocetna_hero">
                 <div class ="tekst_hero">
-                    <h1 id="naslov_glavni"> Dobro dosli u web <span>prodavnicu</span></h1>
+                    <h1> Dobro dosli u web <span>prodavnicu</span></h1>
                 </div>
             </div>
         </div>
         <div class="pocetna_proizvodi">
+        <%
+        ArrayList<Telefon> telefoni = DBQueries.getAllTelefon();
+        for(int i = 0; i < telefoni.size(); i++) {%>
             <div class ="pocetna_proizvod">
-                <h2>Proizvod 1</h2>
+                <h2><%=telefoni.get(i).getNaziv()%></h2>
                 <div class ="prozivod_slika">
-                    <img src ="slike/asus.jpg">
+                    <img src =<%=telefoni.get(i).getSlika()%>>
                 </div>
-                <p class ="pocetna_proizvod_info"> Ovo je opis prvog telefona </p>
-                <span clas ="pocetna_proizvod_cena">1200</span>
+                <p class ="pocetna_proizvod_info"><%=telefoni.get(i).getOpis()%></p>
+                <span clas ="pocetna_proizvod_cena"><%=telefoni.get(i).getCena()%></span>
                 <a href = "" class = "dugme-detalji"> Detalji </a>
-            </div>
-            <div class ="pocetna_proizvod">
-                <h2>Proizvod 1</h2>
-                <div class ="prozivod_slika">
-                    <img src ="slike/omen.jpg">
-                </div>
-                <p class ="pocetna_proizvod_info"> Ovo je opis prvog telefona </p>
-                <span clas ="pocetna_proizvod_cena">900</span>
-                <a href = "#" class = "dugme-detalji"> Detalji </a>
-            </div>
-            <div class ="pocetna_proizvod">
-                <h2>Proizvod 1</h2>
-                <div class ="prozivod_slika">
-                    <img src ="slike/p30.png">
-                </div>
-                <p class ="pocetna_proizvod_info"> Ovo je opis prvog telefona </p>
-                <span clas ="pocetna_proizvod_cena">400</span>
-                <a href = "#" class = "dugme-detalji"> Detalji </a>
-            </div>
-            
+            </div>  
         </div>
-
     </body>
 </html>

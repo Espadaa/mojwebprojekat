@@ -6,12 +6,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import javax.servlet.annotation.WebServlet;
 import model.Korisnik;
 import model.Telefon;
 import model.Naruceno;
 
-@WebServlet(name = "RegistracijaServlet", urlPatterns = {"/RegistracijaServlet"})
 
 public class DBQueries {
 
@@ -37,10 +35,11 @@ public class DBQueries {
     }
 
     public static void insertKorisnik(Korisnik korisnik) throws SQLException {
-        String upit = "INSERT INTO `korisnici`(`id`, `username`, `password`, `ime`, `prezime`, `mesto`, `godine`, `pol`) VALUES(NULL,?,?,?,?,?,?);";
+        String upit = "INSERT INTO `korisnici`(`id`, `username`, `password`, `ime`, `prezime`, `mesto`, `godine`) VALUES(NULL,?,?,?,?,?,?);";
         Connection baza = DBConnection.getConn();
         PreparedStatement pst = baza.prepareStatement(upit);
 
+        System.out.println(korisnik);
         pst.setString(1, korisnik.getUsername());
         pst.setString(2, korisnik.getPassword());
         pst.setString(3, korisnik.getIme());
@@ -65,6 +64,7 @@ public class DBQueries {
             telefon.setOpis(resultSet.getString(4));
             telefon.setCena(resultSet.getInt(5));
             telefon.setGodina(resultSet.getInt(6));
+            telefon.setSlika(resultSet.getString(7));
             telefoni.add(telefon);
         }
         return telefoni;
@@ -94,9 +94,8 @@ public class DBQueries {
         Connection baza = DBConnection.getConn();
         PreparedStatement pst = baza.prepareStatement(upit);
 
-        pst.setInt(1, naruceno.getId());
-        pst.setInt(2,naruceno.getKorisnik_id());
-        pst.setInt(3, naruceno.getTelefon_id());
+        pst.setInt(1, naruceno.getKorisnik().getId());
+        pst.setInt(2, naruceno.getTelefon().getId());
         pst.execute();
     }
 }

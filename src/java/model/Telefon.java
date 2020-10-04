@@ -7,22 +7,25 @@ private String proizvodjac;
 private String opis;
 private int cena;
 private int godina;
+private String slika;
 
-    public Telefon(int id, String naziv, String proizvodjac, String opis, int cena, int godina) {
+    public Telefon(int id, String naziv, String proizvodjac, String opis, int cena, int godina, String slika) {
         this.id = id;
         this.naziv = naziv;
         this.proizvodjac = proizvodjac;
         this.opis = opis;
         this.cena = cena;
         this.godina = godina;
+        this.slika = slika;
     }
 
-    public Telefon(String naziv, String proizvodjac, String opis, int cena, int godina) {
+    public Telefon(String naziv, String proizvodjac, String opis, int cena, int godina, String slika) {
         this.naziv = naziv;
         this.proizvodjac = proizvodjac;
         this.opis = opis;
         this.cena = cena;
         this.godina = godina;
+        this.slika = slika;
     }
     
     public Telefon() {
@@ -76,10 +79,17 @@ private int godina;
         this.godina = godina;
     }
 
-    @Override
-    public String toString() {
-        return "Telefon{" + "id=" + id + ", naziv=" + naziv + ", proizvodjac=" + proizvodjac + ", opis=" + opis + ", cena=" + cena + ", godina=" + godina + '}';
+    public String getSlika() {
+        return slika;
     }
 
+    public void setSlika(String slika) {
+        this.slika = slika;
+    }
+
+    @Override
+    public String toString() {
+        return "Telefon{" + "id=" + id + ", naziv=" + naziv + ", proizvodjac=" + proizvodjac + ", opis=" + opis + ", cena=" + cena + ", godina=" + godina + ", slika=" + slika + '}';
+    }
     
 }

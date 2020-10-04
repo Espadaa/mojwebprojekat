@@ -32,7 +32,7 @@
         </div>
         <div class ="registracija_form">
 
-            <form ACTION ="RegistracijaServlet" method ="POST">
+            <form ACTION ="KorisnikServlet" method ="POST">
                 Vas korisnicko ime: <input type ="text" name ="username" id="registracija_username"><br/>
                 Vasa lozinka: <input type="password" name ="password" id="registracija_password"><br/>
                 Vase ime: <input type ="text" name ="ime" id="registracija_ime"><br/>
