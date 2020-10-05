@@ -7,6 +7,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -38,6 +39,9 @@ public class KorisnikServlet extends HttpServlet {
             
             Korisnik korisnik = new Korisnik(username, password, ime, prezime, mesto, godine);
             DBQueries.insertKorisnik(korisnik);
+            RequestDispatcher dispatcher = getServletContext()
+                    .getRequestDispatcher("/index.jsp");
+            dispatcher.forward(request, response);
         } catch (SQLException ex) {
             ex.getStackTrace();
         }

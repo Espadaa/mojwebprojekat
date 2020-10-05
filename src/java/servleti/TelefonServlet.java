@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.Telefon;
-@WebServlet(name = "TelefonServlet", urlPatterns = {"/TelefonServlet"})
+@WebServlet(name = "TelefonServlet", urlPatterns = {"/TelefonServlet/:id"})
 
 public class TelefonServlet extends HttpServlet {
 
@@ -21,15 +21,15 @@ public class TelefonServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             
-             int id =Integer.parseInt(request.getParameter("id")) ;
              String naziv = request.getParameter("naziv");
              String proizvodjac = request.getParameter("proizvodjac");
              String opis = request.getParameter("opis");
              int cena = Integer.parseInt(request.getParameter("cena"));
              int godina = Integer.parseInt(request.getParameter("godina"));
+             int stanje = Integer.parseInt(request.getParameter("stanje"));
              String slika = request.getParameter("slika");
             
-            Telefon telefon = new Telefon(id, naziv, proizvodjac, opis, cena, godina, slika);
+            Telefon telefon = new Telefon(naziv, proizvodjac, opis, cena, godina, stanje, slika);
             DBQueries.insertTelefon(telefon);
             
         }
@@ -39,15 +39,9 @@ public class TelefonServlet extends HttpServlet {
     }
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
-    }
-
-    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-//        processRequest(request, response);
+        processRequest(request, response);
     }
 
     @Override

@@ -11,10 +11,12 @@
         <div class ="header">
             <div class ="main">
 
-                <b/> <a href ="registracija.jsp" id="registracija">Registracija </a>
-                <a href ="index.jsp" id="kontakt"> Pocetna</a><b/>                
-                <a href ="galerija.jsp" id="galerija"> Galerija</a><b/>
+              
+              <b/> <a href ="index.jsp" id ="pocetna">Pocetna</a>
+              <a href ="galerija.jsp" id="galerija">Galerija</a><b/>
+               <a href ="kontakt.jsp" id="kontakt">Kontakt</a><b/>
                 <a href ="zaposleni.jsp" id="zaposleni">Zaposleni</a><b/>
+              <a href ="registracija.jsp" id="registracija">Registracija</a><b/>
             </div>
             <div class ="kontakt"></div>
         </div>

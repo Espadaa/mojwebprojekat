@@ -52,7 +52,7 @@ private Telefon telefon;
         return "Naruceno{" + "id=" + id + ", korisnik=" + korisnik + ", telefon=" + telefon + '}';
     }
 
-     public  Naruceno getById(int id) throws SQLException {
+     public static Naruceno getById(int id) throws SQLException {
         return DBQueries.getNarucenoById(id);
         
 

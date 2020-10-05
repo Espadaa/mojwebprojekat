@@ -14,11 +14,11 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>KorisnikServlet</servlet-name>
-        <url-pattern>/KorisnikServlet</url-pattern>
+        <url-pattern>/KorisnikServlet/*</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>TelefonServlet</servlet-name>
-        <url-pattern>/TelefonServlet</url-pattern>
+        <url-pattern>/TelefonServlet/*</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>NarudzbinaServlet</servlet-name>
