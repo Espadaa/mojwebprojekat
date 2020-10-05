@@ -1,11 +1,14 @@
 
 .header {
-    
+    background: linear-gradient(to bottom, #ccccff 75%, #ffffff 100%);    padding-top: 15px;
     background-color: #ccccff;
     padding-bottom: 30px;
     padding-left: 400px;
     text-transform: uppercase;
     font-family: "Comic Sans MS", cursive, sans-serif;
+}
+#logovanje {
+    margin-right: 30px;
 }
 #registracija {
 
@@ -113,9 +116,23 @@
     margin-bottom: 15px;
 }
 
+.footer {
+
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #ccccff;
+    font-family: 'Lobster', cursive;
+    text-align: center;
+    background: linear-gradient(to top, #ccccff 75%, #ffffff 100%);    padding-top: 15px;
+}
+.footer-logo {
+    text-align: center;
+}
 
 .registracija_header {
-    background: linear-gradient(to bottom, #ccccff 0%, #ffffff 100%);    padding-top: 15px;
+    
     padding-bottom: 15px;
     padding-left: 450px;
     margin-bottom: 30px;    
@@ -155,7 +172,7 @@
 
 .zaposleni_zaposleni {
 
-    background: linear-gradient(to bottom, #ccccff 0%, #ffffff 100%);    padding-top: 15px;
+    
     padding-bottom: 15px;
 
     margin-bottom: 30px;   
@@ -194,7 +211,7 @@
 
 
 .galerija_proizvodi {
-    background: linear-gradient(to bottom, #ccccff 0%, #ffffff 100%);    padding-top: 15px;
+    
     padding-bottom: 15px;
 
     margin-bottom: 30px;   

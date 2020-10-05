@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.Telefon;
-
 @WebServlet(name = "TelefonServlet", urlPatterns = {"/TelefonServlet"})
 
 public class TelefonServlet extends HttpServlet {

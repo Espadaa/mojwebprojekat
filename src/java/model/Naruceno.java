@@ -1,5 +1,8 @@
 package model;
 
+import database.DBQueries;
+import java.sql.SQLException;
+
 public class Naruceno {
 private int id;
 private Korisnik korisnik;
@@ -49,6 +52,10 @@ private Telefon telefon;
         return "Naruceno{" + "id=" + id + ", korisnik=" + korisnik + ", telefon=" + telefon + '}';
     }
 
-    
+     public  Naruceno getById(int id) throws SQLException {
+        return DBQueries.getNarucenoById(id);
+        
+
+    }
     
 }

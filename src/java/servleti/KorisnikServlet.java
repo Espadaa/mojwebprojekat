@@ -3,10 +3,10 @@ package servleti;
 
 import database.DBQueries;
 import java.sql.SQLException;
-import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.io.IOException;
+import java.io.PrintWriter;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -39,7 +39,7 @@ public class KorisnikServlet extends HttpServlet {
             Korisnik korisnik = new Korisnik(username, password, ime, prezime, mesto, godine);
             DBQueries.insertKorisnik(korisnik);
         } catch (SQLException ex) {
-            Logger.getLogger(KorisnikServlet.class.getName()).log(Level.SEVERE, null, ex);
+            ex.getStackTrace();
         }
     }
    

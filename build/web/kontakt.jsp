@@ -1,23 +1,38 @@
-<%-- 
-    Document   : kontakt
-    Created on : Oct 3, 2020, 10:25:59 PM
-    Author     : Asus
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" href="style.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Kontakt</title>
     </head>
     <body>
-        <div id ="wrapper">
-            <div id ="main">
-                <a href ="pocetna.jsp"> Pocetna</a>
-                <a href ="registracija.jsp">Registracija </a>
-                <a href ="galerija.jsp"> Galerija</a>
-                <a href ="zaposleni.jsp">Zaposleni</a>
+        <div class ="header">
+            <div class ="main">
+
+                <b/> <a href ="registracija.jsp" id="registracija">Registracija </a>
+                <a href ="index.jsp" id="kontakt"> Pocetna</a><b/>                
+                <a href ="galerija.jsp" id="galerija"> Galerija</a><b/>
+                <a href ="zaposleni.jsp" id="zaposleni">Zaposleni</a><b/>
+            </div>
+            <div class ="kontakt"></div>
+        </div>
+        <div class ="kontatk">
+            <div class ="kontakt_mailto">
+                <a href="mailto:jasmin.potter.94@gmail.com?Subject =Cao%20admine">Posaljite mail</a>
+            </div>
+            <div class ="kontakt_info">
+                <p>Testirajte nas. Upit ne košta ništa.<br>Možda se pozitivno iznenadite odnosom cena-kvaliteta.</p>
+                <div class ="kontakt_info_link">
+                <a href ="https://www.instagram.com/alhemicaar/">Instagram</a> <br/>
+                <a href ="https://www.facebook.com/ristic997/">Facebook</a>
+                </div>
+            </div>
+        </div>
+        <div class ="footer">
+            <div class ="footer-logo">
+                <h2>Moja web prodavnica</h2>
             </div>
         </div>
     </body>

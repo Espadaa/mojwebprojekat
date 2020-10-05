@@ -6,12 +6,33 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import javax.servlet.annotation.WebServlet;
 import model.Korisnik;
 import model.Telefon;
 import model.Naruceno;
 
-
 public class DBQueries {
+
+    public static Korisnik getKorisnikById(int id) throws SQLException {
+        Korisnik korisnik = new Korisnik();
+
+        Connection baza = DBConnection.getConn();
+        Statement st = baza.createStatement();
+        String upis = "SELECT * FROM `korisnici` WHERE `korisnici`.`id` =?";
+        ResultSet resultSet = st.executeQuery(upis);
+        try {
+            korisnik.setId(resultSet.getInt("id"));
+            korisnik.setUsername(resultSet.getString("username"));
+            korisnik.setPassword(resultSet.getString("password"));
+            korisnik.setIme(resultSet.getString("ime"));
+            korisnik.setPrezime(resultSet.getString("prezime"));
+            korisnik.setMesto(resultSet.getString("mesto"));
+            korisnik.setGodine(resultSet.getInt("godine"));
+        } catch (Exception ex) {
+            ex.getStackTrace();
+        }
+        return korisnik;
+    }
 
     public static ArrayList<Korisnik> getAllKorisnik() throws SQLException {
         ArrayList<Korisnik> korisnici = new ArrayList<Korisnik>();
@@ -32,6 +53,25 @@ public class DBQueries {
             korisnici.add(korisnik);
         }
         return korisnici;
+    }
+
+    public static Telefon getTelefonById(int id) throws SQLException {
+        Telefon telefon = new Telefon();
+
+        Connection baza = DBConnection.getConn();
+        Statement st = baza.createStatement();
+        String upis = "SELECT * FROM `telefoni` WHERE `telefoni`.`id` =?";
+        ResultSet resultSet = st.executeQuery(upis);
+        try {
+            telefon.setId(resultSet.getInt("id"));
+            telefon.setNaziv(resultSet.getString("naziv"));
+            telefon.setProizvodjac(resultSet.getString("proizvodjac"));
+            telefon.setOpis(resultSet.getString("opis"));
+            telefon.setCena(resultSet.getInt("cena"));
+        } catch (Exception ex) {
+            ex.getStackTrace();
+        }
+        return telefon;
     }
 
     public static void insertKorisnik(Korisnik korisnik) throws SQLException {
@@ -84,8 +124,35 @@ public class DBQueries {
 
     }
 
+    public Naruceno getNarucenoById(int id) throws SQLException {
+        Naruceno naruceno = new Naruceno();
+        Connection baza = DBConnection.getConn();
+        Statement st = baza.createStatement();
+        String upis = "SELECT * FROM `naruceno` WHERE `clan_knjige`.`id` =?";
+        ResultSet resultSet = st.executeQuery(upis);
+        try {
+            naruceno.setId(resultSet.getInt(1));
+            naruceno.setKorisnik(getKorisnikById(resultSet.getInt(2)));
+            naruceno.setKorisnik(getTelefonById(resultSet.getInt(3)));
+
+        } catch (Exception e) {
+            System.err.println("Got an exception");
+            System.err.println(e.getMessage());
+        }
+        return naruceno;
+    }
+
     public static ArrayList<Naruceno> getAllNaruceno() throws SQLException {
         ArrayList<Naruceno> sve_naruceno = new ArrayList<Naruceno>();
+        Connection baza = DBConnection.getConn();
+        Statement st = baza.createStatement();
+        String upis = "SELECT * FROM `naruceno`;";
+        ResultSet resultSet = st.executeQuery(upis);
+        while (resultSet.next()) {
+            Naruceno naruceno = new Naruceno();
+            naruceno.setId(resultSet.getInt(1));
+            naruceno.setKorisnik(resultSet.getInt("korisnik_id"));
+        }
         return sve_naruceno;
     }
 
@@ -97,5 +164,9 @@ public class DBQueries {
         pst.setInt(1, naruceno.getKorisnik().getId());
         pst.setInt(2, naruceno.getTelefon().getId());
         pst.execute();
+    }
+
+    public static void prijavaKorisnika(Korisnik korisnik) {
+
     }
 }

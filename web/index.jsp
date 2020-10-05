@@ -15,7 +15,7 @@
     <body>
         <div class ="header">
             <div class ="main">
-
+                <a href ="logovanje.jsp" id ="logovanje">Uloguj se </a>
                 <b/> <a href ="registracija.jsp" id="registracija">Registracija </a>
                 <a href ="kontakt.jsp" id="kontakt"> Kontakt</a><b/>                
                 <a href ="galerija.jsp" id="galerija"> Galerija</a><b/>
@@ -30,9 +30,9 @@
             </div>
         </div>
         <div class="pocetna_proizvodi">
-        <%
-        ArrayList<Telefon> telefoni = DBQueries.getAllTelefon();
-        for(int i = 0; i < telefoni.size(); i++) {%>
+            <%
+            ArrayList<Telefon> telefoni = DBQueries.getAllTelefon();%>
+            <%for(int i = 0; i < telefoni.size(); i++) {%>
             <div class ="pocetna_proizvod">
                 <h2><%=telefoni.get(i).getNaziv()%></h2>
                 <div class ="prozivod_slika">
@@ -40,8 +40,16 @@
                 </div>
                 <p class ="pocetna_proizvod_info"><%=telefoni.get(i).getOpis()%></p>
                 <span clas ="pocetna_proizvod_cena"><%=telefoni.get(i).getCena()%></span>
-                <a href = "" class = "dugme-detalji"> Detalji </a>
+                <a href = "galerija.jsp" class = "dugme-detalji"> Naruci </a>
+                <%}%>
+                
+                
             </div>  
         </div>
+                <div class ="footer">
+                    <div class ="footer-logo">
+                        <h2>Moja web prodavnica</h2>
+                    </div>
+                </div>
     </body>
 </html>

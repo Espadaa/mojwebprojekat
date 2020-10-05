@@ -102,9 +102,13 @@ public class Korisnik {
     public String toString() {
         return "Korisnik{" + "id=" + id + ", username=" + username + ", password=" + password + ", ime=" + ime + ", prezime=" + prezime + ", mesto=" + mesto + ", godine=" + godine + '}';
     }
-    
+    public static Korisnik getById(int id) throws SQLException{
+        return DBQueries.getKorisnikById(id);
+    }
     public static ArrayList<Korisnik> sviKorisnici() throws SQLException {
         return DBQueries.getAllKorisnik();
     }
-    
+    public static void prijava(){
+        
+    }
 }

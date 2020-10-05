@@ -13,6 +13,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.Naruceno;
+import model.Korisnik;
+import model.Telefon;
         
 @WebServlet(name = "NarudzbinaServlet", urlPatterns = {"/NarudzbinaServlet"})
 
@@ -22,13 +24,14 @@ public class NarudzbinaServlet extends HttpServlet {
             throws ServletException, IOException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            int id = Integer.parseInt(request.getParameter("id"));
-            int korisnik_id = Integer.parseInt(request.getParameter("korisnik_id"));
-            int telefon_id = Integer.parseInt(request.getParameter("telefon_id"));
+            Naruceno naruceno = new Naruceno();                       
+            Korisnik korisnik = naruceno.getKorisnik();
+            Telefon telefon = naruceno.getTelefon();
             
-            Naruceno naruceno = new Naruceno(id,korisnik_id, telefon_id);
-            DBQueries.insertNaruceno(naruceno);
+            Naruceno novo_naruceno = new Naruceno(korisnik, telefon);
+            DBQueries.insertNaruceno(novo_naruceno);
         }
+        
     }
 
     

@@ -47,5 +47,10 @@
                 
             </div>
         </div>
+        <div class ="footer">
+            <div class ="footer-logo">
+                <h2>Moja web prodavnica</h2>
+            </div>
+        </div>
     </body>
 </html>

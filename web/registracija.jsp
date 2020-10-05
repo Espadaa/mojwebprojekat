@@ -3,7 +3,7 @@
 <%@page import ="java.util.ArrayList"%>
 <%@page import="model.Korisnik" %>
 <%@page import ="model.Telefon" %>
-<%@page import ="model.Naruceno" %>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <%ArrayList<Korisnik> korisnici = DBQueries.getAllKorisnik();%>
@@ -44,6 +44,10 @@
         </div>
 
 
-
+        <div class ="footer">
+            <div class ="footer-logo">
+                <h2>Moja web prodavnica</h2>
+            </div>
+        </div>
     </body>
 </html>
